@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="t d">
+  <title id="t">Underground mine sensor deployment</title><desc id="d">Stylized underground mine tunnel with three connected monitoring nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0e2c40"/><stop offset=".58" stop-color="#102234"/><stop offset="1" stop-color="#091824"/></linearGradient>
+    <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#24485b"/><stop offset="1" stop-color="#102534"/></linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#153548"/><stop offset="1" stop-color="#09141e"/></linearGradient>
+    <radialGradient id="lamp"><stop stop-color="#9df7ff" stop-opacity=".95"/><stop offset=".22" stop-color="#52dcff" stop-opacity=".45"/><stop offset="1" stop-color="#52dcff" stop-opacity="0"/></radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="520" rx="38" fill="url(#bg)"/>
+  <ellipse cx="600" cy="260" rx="540" ry="330" fill="none" stroke="#4b8299" stroke-opacity=".18" stroke-width="110"/>
+  <ellipse cx="600" cy="260" rx="430" ry="265" fill="#0a1722" stroke="#6ea8bd" stroke-opacity=".12" stroke-width="34"/>
+  <path d="M0 0h220l95 520H0zM1200 0H980L885 520h315z" fill="url(#rock)" opacity=".82"/>
+  <path d="M280 520 477 238h246L920 520z" fill="url(#floor)"/>
+  <path d="M464 520 558 252M736 520 642 252" stroke="#6b8fa0" stroke-opacity=".28" stroke-width="7"/>
+  <path d="M476 470h248M493 420h214M510 371h180M527 323h146" stroke="#6b8fa0" stroke-opacity=".22" stroke-width="5"/>
+  <g opacity=".75"><rect x="460" y="88" width="280" height="9" rx="4.5" fill="#7bc6dc"/><rect x="515" y="83" width="8" height="85" fill="#688d9d"/><rect x="678" y="83" width="8" height="85" fill="#688d9d"/></g>
+  <g fill="url(#lamp)"><circle cx="516" cy="150" r="82"/><circle cx="684" cy="150" r="82"/></g>
+  <g stroke="#44e4ff" stroke-width="4" stroke-linecap="round" opacity=".88" filter="url(#glow)"><path d="M335 260 595 217 842 280"/><path d="M335 260 610 350"/></g>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g transform="translate(335 260)"><circle r="23" fill="#103749" stroke="#42e3a0" stroke-width="4"/><circle r="9" fill="#42e3a0"/><text y="48" fill="#e9fbff" font-size="20" font-weight="700">N01</text><text y="69" fill="#89adbd" font-size="13">WEST ENTRY</text></g>
+    <g transform="translate(595 217)"><circle r="25" fill="#103749" stroke="#34d6ff" stroke-width="4"/><circle r="10" fill="#34d6ff"/><text y="51" fill="#e9fbff" font-size="20" font-weight="700">N02</text><text y="72" fill="#89adbd" font-size="13">NORTH DRIFT</text></g>
+    <g transform="translate(842 280)"><circle r="25" fill="#103749" stroke="#9a82ff" stroke-width="4"/><circle r="10" fill="#9a82ff"/><text y="51" fill="#e9fbff" font-size="20" font-weight="700">N03</text><text y="72" fill="#89adbd" font-size="13">CENTER PANEL</text></g>
+  </g>
+  <g transform="translate(72 80)"><rect width="220" height="92" rx="18" fill="#071723" fill-opacity=".86" stroke="#5edcff" stroke-opacity=".24"/><circle cx="34" cy="33" r="9" fill="#42e3a0"/><text x="56" y="30" fill="#dff8ff" font-size="17" font-family="Arial" font-weight="700">3-NODE ARRAY</text><text x="56" y="54" fill="#78a0b3" font-size="13" font-family="Arial">Live geotechnical mesh</text><text x="24" y="76" fill="#4e7184" font-size="11" font-family="Arial">Tilt · Vibration · Displacement · Crack</text></g>
+</svg>

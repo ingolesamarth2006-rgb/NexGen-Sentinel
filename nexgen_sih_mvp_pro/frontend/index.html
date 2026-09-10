@@ -1,0 +1,1868 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f3efe9" />
+  <title>NexGen Sentinel · Mine Subsidence Intelligence</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+
+<body>
+
+  <!-- FULL-SCREEN MINE BACKGROUND -->
+  <div class="site-mine-bg" aria-hidden="true">
+    <img src="/assets/hero-mine.jpg" alt="" />
+  </div>
+
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <div class="app-shell">
+
+    <!-- MAIN -->
+    <main class="main-stage">
+
+      <!-- PROFESSIONAL TOP NAVIGATION -->
+      <header class="topbar topbar-pro">
+
+        <div class="topbar-main-row">
+
+          <div class="brand-block top-brand">
+            <div class="brand-mark">
+              <span>N</span>
+              <i></i>
+            </div>
+
+            <div class="brand-copy">
+              <strong>NexGen <em>Sentinel</em></strong>
+              <span>Mine Intelligence Platform</span>
+            </div>
+          </div>
+
+
+          <nav class="top-nav" aria-label="Primary navigation">
+
+            <button
+              class="nav-item active"
+              data-view="command"
+              data-title="Command Center">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 13h6V4H4v9Zm0 7h6v-5H4v5Zm10 0h6V11h-6v9Zm0-16v5h6V4h-6Z"/>
+              </svg>
+              <span>Command Center</span>
+              <i></i>
+            </button>
+
+            <button
+              class="nav-item"
+              data-view="nodes"
+              data-title="Sensor Network">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm-8 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm16 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM9.8 8.2 6.7 13m7.5-4.8 3.1 4.8M7 15h10"/>
+              </svg>
+              <span>Sensor Network</span>
+              <i></i>
+            </button>
+
+            <button
+              class="nav-item"
+              data-view="ai"
+              data-title="AI Intelligence">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 3h6v3h3v3h3v6h-3v3h-3v3H9v-3H6v-3H3V9h3V6h3V3Zm0 6v6h6V9H9Z"/>
+              </svg>
+              <span>AI Intelligence</span>
+              <i></i>
+            </button>
+
+            <button
+              class="nav-item"
+              data-view="dataset"
+              data-title="Dataset Lab">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 5c0-1.1 3.1-2 7-2s7 .9 7 2-3.1 2-7 2-7-.9-7-2Zm0 0v5c0 1.1 3.1 2 7 2s7-.9 7-2V5M5 10v5c0 1.1 3.1 2 7 2s7-.9 7-2v-5M5 15v4c0 1.1 3.1 2 7 2s7-.9 7-2v-4"/>
+              </svg>
+              <span>Dataset Lab</span>
+              <i></i>
+            </button>
+
+            <button
+              class="nav-item"
+              data-view="alerts"
+              data-title="Alert Center">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3 3 20h18L12 3Zm0 5v6m0 3h.01"/>
+              </svg>
+              <span>Alert Center</span>
+              <i></i>
+            </button>
+
+          </nav>
+
+
+          <div class="topbar-actions">
+
+            <div class="live-clock">
+              <span class="live-beacon"></span>
+              <div>
+                <small>LIVE SESSION</small>
+                <b id="clock">--:--:--</b>
+              </div>
+            </div>
+
+            <button
+              class="icon-button"
+              id="refreshBtn"
+              title="Refresh data"
+              aria-label="Refresh live data">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 11a8 8 0 1 0 2 5m-2-5V5m0 6h-6"/>
+              </svg>
+            </button>
+
+            <div class="operator">
+              <span>NX</span>
+              <div>
+                <b>Control Desk</b>
+                <small>Operator Mode</small>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="topbar-sub-row">
+
+          <div class="page-copy">
+            <div class="breadcrumb">
+              <span>NEXGEN</span>
+              <i>/</i>
+              <span>REAL-TIME MONITORING</span>
+            </div>
+
+            <h1 id="pageTitle">Command Center</h1>
+
+            <p id="pageSubtitle">
+              Live multi-node mine subsidence monitoring and early warning.
+            </p>
+          </div>
+
+          <div class="top-meta">
+
+            <div class="top-site">
+              <span class="pulse-dot"></span>
+              <div>
+                <small>ACTIVE SITE</small>
+                <b>Underground Mine · Panel A</b>
+              </div>
+            </div>
+
+            <div class="health-strip">
+
+              <div class="health-pill">
+                <i id="backendDot" class="status-dot ok"></i>
+                <span>Gateway</span>
+                <b id="backendMini">ONLINE</b>
+              </div>
+
+              <div class="health-pill">
+                <i id="modelDot" class="status-dot"></i>
+                <span>AI Engine</span>
+                <b id="modelMini">CHECKING</b>
+              </div>
+
+              <div class="health-pill">
+                <i id="telegramDot" class="status-dot"></i>
+                <span>Telegram</span>
+                <b id="telegramMini">CHECKING</b>
+              </div>
+
+              <div class="sih-chip">SIH 2026</div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </header>
+
+
+      <div class="stage-scroll">
+
+
+        <!-- ==================================================
+             COMMAND CENTER
+        =================================================== -->
+        <section id="view-command" class="view active">
+
+
+          <!-- HERO -->
+          <div class="hero-strip">
+
+            <article class="risk-hero panel">
+
+              <div class="hero-mine-visual" aria-hidden="true">
+                <img src="/assets/hero-mine.jpg" alt="" />
+                <span class="hero-mine-chip">MINING OPERATIONS CONTEXT</span>
+              </div>
+
+              <div class="panel-title-row">
+
+                <div>
+                  <span class="kicker">MINE HEALTH</span>
+                  <h2>Real-Time Risk Index</h2>
+                </div>
+
+                <span
+                  id="mineStatusBadge"
+                  class="status-badge normal">
+
+                  <i></i>
+                  NORMAL
+
+                </span>
+
+              </div>
+
+
+              <div class="risk-content">
+
+                <div
+                  class="risk-gauge"
+                  id="riskGauge">
+
+                  <div class="risk-gauge-inner">
+                    <strong id="mineRisk">0</strong>
+                    <span>/ 100</span>
+                  </div>
+
+                </div>
+
+
+                <div class="risk-copy">
+
+                  <div class="risk-label">
+                    CURRENT ASSESSMENT
+                  </div>
+
+                  <h3 id="riskHeadline">
+                    Mine conditions stable
+                  </h3>
+
+                  <p id="mineSummary">
+                    Sensor network is establishing the latest mine condition.
+                  </p>
+
+
+                  <div class="risk-scale-labels">
+                    <span>SAFE</span>
+                    <span>ELEVATED</span>
+                    <span>CRITICAL</span>
+                  </div>
+
+
+                  <div class="risk-linear">
+                    <i id="riskBar"></i>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- METRICS -->
+            <div class="metric-stack">
+
+              <article class="metric-panel panel">
+
+                <div class="metric-icon cyan">
+
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 6a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM5 18a7 7 0 0 1 14 0M4 9a9 9 0 0 1 16 0"/>
+                  </svg>
+
+                </div>
+
+                <div>
+                  <small>ACTIVE NODES</small>
+                  <strong id="activeNodes">0 / 3</strong>
+
+                  <span>
+                    <i class="micro-dot"></i>
+                    Network telemetry
+                  </span>
+                </div>
+
+              </article>
+
+
+              <article class="metric-panel panel">
+
+                <div class="metric-icon amber">
+
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3 3 20h18L12 3Zm0 5v6m0 3h.01"/>
+                  </svg>
+
+                </div>
+
+                <div>
+                  <small>ACTIVE ALERTS</small>
+                  <strong id="activeAlerts">0</strong>
+                  <span>Warning + Critical</span>
+                </div>
+
+              </article>
+
+
+              <article class="metric-panel panel">
+
+                <div class="metric-icon violet">
+
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 5c0-1.1 3.1-2 7-2s7 .9 7 2-3.1 2-7 2-7-.9-7-2Zm0 0v5c0 1.1 3.1 2 7 2s7-.9 7-2V5M5 10v5c0 1.1 3.1 2 7 2s7-.9 7-2v-5"/>
+                  </svg>
+
+                </div>
+
+                <div>
+                  <small>DATASET RECORDS</small>
+                  <strong id="recordCount">0</strong>
+                  <span>Continuous acquisition</span>
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+
+          <!-- COMMAND GRID -->
+          <div class="command-grid">
+
+            <!-- MINE MAP -->
+            <article class="mine-panel panel">
+
+              <div class="panel-title-row">
+
+                <div>
+                  <span class="kicker">SPATIAL INTELLIGENCE</span>
+                  <h2>Mine Panel Risk Map</h2>
+                </div>
+
+                <div class="panel-tools">
+
+                  <span class="tiny-status">
+                    <i></i>
+                    LIVE
+                  </span>
+
+                  <span class="zoom-label">
+                    PANEL A
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="mine-viewport">
+
+                <img
+                  class="mine-illustration"
+                  src="/assets/mine-deployment.svg"
+                  alt="Three-node underground monitoring deployment"
+                />
+
+
+                <div class="mine-bg-grid"></div>
+
+
+                <div class="tunnel t1"></div>
+                <div class="tunnel t2"></div>
+                <div class="tunnel t3"></div>
+                <div class="tunnel t4"></div>
+
+
+                <div
+                  id="riskZone"
+                  class="risk-zone">
+
+                  <span>RISK CLUSTER</span>
+
+                </div>
+
+
+                <button
+                  class="map-node n1"
+                  data-node="N01">
+
+                  <i></i>
+                  <b>N01</b>
+                  <small>West Entry</small>
+
+                </button>
+
+
+                <button
+                  class="map-node n2"
+                  data-node="N02">
+
+                  <i></i>
+                  <b>N02</b>
+                  <small>North Drift</small>
+
+                </button>
+
+
+                <button
+                  class="map-node n3"
+                  data-node="N03">
+
+                  <i></i>
+                  <b>N03</b>
+                  <small>Center Panel</small>
+
+                </button>
+
+
+                <div class="map-legend">
+
+                  <span>
+                    <i class="l-normal"></i>
+                    Normal
+                  </span>
+
+                  <span>
+                    <i class="l-warning"></i>
+                    Warning
+                  </span>
+
+                  <span>
+                    <i class="l-critical"></i>
+                    Critical
+                  </span>
+
+                </div>
+
+
+                <div class="map-coords">
+                  LOCAL GRID · 100 m SCALE
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <!-- AI BRIEF -->
+            <article class="analysis-panel panel">
+
+              <div class="panel-title-row">
+
+                <div>
+                  <span class="kicker">AI DECISION SUPPORT</span>
+                  <h2>Intelligence Brief</h2>
+                </div>
+
+                <span class="ai-chip">
+                  <i></i>
+                  AI ACTIVE
+                </span>
+
+              </div>
+
+
+              <div
+                id="aiInsight"
+                class="insight-block">
+
+                <div class="insight-orb">
+                  <span></span>
+                </div>
+
+                <div>
+
+                  <small>ASSESSMENT</small>
+
+                  <h3>
+                    Monitoring stable
+                  </h3>
+
+                  <p>
+                    Waiting for recent node readings.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              <div class="signal-bars">
+
+
+                <div>
+
+                  <span>
+                    <b>ML Anomaly</b>
+                    <small>Isolation Forest</small>
+                  </span>
+
+                  <strong id="cAnomaly">
+                    0%
+                  </strong>
+
+                  <div>
+                    <i id="barAnomaly"></i>
+                  </div>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    <b>Temporal Trend</b>
+                    <small>Recent slope analysis</small>
+                  </span>
+
+                  <strong id="cTrend">
+                    0%
+                  </strong>
+
+                  <div>
+                    <i id="barTrend"></i>
+                  </div>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    <b>Spatial Correlation</b>
+                    <small>Adjacent node fusion</small>
+                  </span>
+
+                  <strong id="cSpatial">
+                    0%
+                  </strong>
+
+                  <div>
+                    <i id="barSpatial"></i>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="recommendation">
+
+                <span>
+                  RECOMMENDED ACTION
+                </span>
+
+                <p id="recommendationText">
+                  Continue standard monitoring.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <!-- LOWER GRID -->
+          <div class="lower-grid">
+
+            <!-- TREND -->
+            <article class="trend-panel panel">
+
+              <div class="panel-title-row">
+
+                <div>
+
+                  <span class="kicker">
+                    LIVE TELEMETRY
+                  </span>
+
+                  <h2>
+                    Sensor Trend
+                  </h2>
+
+                  <p id="chartNodeLabel">
+                    Node N03 · displacement
+                  </p>
+
+                </div>
+
+
+                <select id="chartMetric">
+
+                  <option value="displacement">
+                    Displacement
+                  </option>
+
+                  <option value="tilt">
+                    Tilt
+                  </option>
+
+                  <option value="vibration">
+                    Vibration
+                  </option>
+
+                  <option value="crack">
+                    Crack Growth
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="chart-wrap threshold-chart">
+                <canvas id="trendChart"></canvas>
+                <div class="chart-alert-line" data-threshold-for="chartMetric">
+                  <span>DISPLACEMENT ALERT LIMIT</span>
+                </div>
+              </div>
+              <div class="chart-threshold-note">
+                <i></i>
+                Red guide = configured prototype warning boundary.
+              </div>
+
+            </article>
+
+
+            <!-- DEMO CONSOLE -->
+            <article class="demo-console panel">
+
+              <div class="panel-title-row">
+
+                <div>
+
+                  <span class="kicker">
+                    JURY DEMO MODE
+                  </span>
+
+                  <h2>
+                    Scenario Console
+                  </h2>
+
+                </div>
+
+                <span class="simulation-tag">
+                  SIMULATOR
+                </span>
+
+              </div>
+
+
+              <p class="console-intro">
+                Drive the same backend, risk engine and alert pipeline
+                using controlled scenarios when hardware is unavailable.
+              </p>
+
+
+              <div class="scenario-grid">
+
+
+                <button
+                  class="scenario-btn normal"
+                  data-scenario="normal">
+
+                  <span class="scenario-icon">
+                    01
+                  </span>
+
+                  <div>
+                    <b>Normal</b>
+                    <small>Stable mine</small>
+                  </div>
+
+                </button>
+
+
+                <button
+                  class="scenario-btn warning"
+                  data-scenario="warning">
+
+                  <span class="scenario-icon">
+                    02
+                  </span>
+
+                  <div>
+                    <b>Warning</b>
+                    <small>Elevated trend</small>
+                  </div>
+
+                </button>
+
+
+                <button
+                  class="scenario-btn critical"
+                  data-scenario="critical">
+
+                  <span class="scenario-icon">
+                    03
+                  </span>
+
+                  <div>
+                    <b>Critical</b>
+                    <small>High severity</small>
+                  </div>
+
+                </button>
+
+
+                <button
+                  class="scenario-btn event"
+                  data-scenario="subsidence">
+
+                  <span class="scenario-icon">
+                    ⚡
+                  </span>
+
+                  <div>
+                    <b>Subsidence Event</b>
+                    <small>Multi-node cascade</small>
+                  </div>
+
+                </button>
+
+              </div>
+
+
+              <div class="pipeline-track">
+
+                <span>ESP32</span>
+                <i></i>
+
+                <span>API</span>
+                <i></i>
+
+                <span>ML</span>
+                <i></i>
+
+                <span>RISK</span>
+                <i></i>
+
+                <span>TELEGRAM</span>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             SENSOR NETWORK
+        =================================================== -->
+        <section id="view-nodes" class="view">
+
+
+          <div class="section-heading">
+
+            <div>
+
+              <span class="kicker">
+                EDGE TELEMETRY
+              </span>
+
+              <h2>
+                Sensor Network
+              </h2>
+
+              <p>
+                Inspect node-level risk, health and continuous measurements.
+              </p>
+
+            </div>
+
+
+            <div class="summary-chip">
+
+              <i class="pulse-dot"></i>
+
+              <span id="networkSummary">
+                3 node topology
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- SENSOR DEPLOYMENT -->
+          <div class="network-visual-banner panel">
+
+            <button
+              class="sensor-visual-trigger"
+              id="sensorPreviewBtn"
+              type="button"
+              aria-haspopup="dialog"
+              aria-controls="sensorModal">
+
+              <img
+                src="/assets/sensor-node.png"
+                alt="Wireless field sensor deployment reference"
+              />
+
+              <span class="sensor-visual-overlay"></span>
+
+              <span class="sensor-visual-topline">
+                FIELD SENSOR DEPLOYMENT
+              </span>
+
+              <span class="sensor-inspect-chip">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 12s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5Z"/>
+                  <circle cx="12" cy="12" r="2.5"/>
+                </svg>
+                Click to inspect
+              </span>
+
+              <span class="sensor-feature-strip">
+                <b>Tilt</b>
+                <i></i>
+                <b>Vibration</b>
+                <i></i>
+                <b>Displacement</b>
+              </span>
+
+            </button>
+
+
+            <div class="network-visual-copy">
+
+              <div>
+                <span class="kicker">FIELD DEPLOYMENT REFERENCE</span>
+                <h3>Three-node geotechnical monitoring concept</h3>
+                <p>
+                  N01–N03 form the field layer for continuous tilt, vibration and
+                  displacement monitoring. The image communicates the intended
+                  mounting concept while the live dashboard handles telemetry,
+                  AI-assisted risk scoring and alerts.
+                </p>
+              </div>
+
+              <div class="visual-tags">
+                <span>3 Active Nodes</span>
+                <span>ESP32 Edge</span>
+                <span>LoRa-ready</span>
+                <span>Real-time AI</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            id="nodeCards"
+            class="node-card-grid">
+          </div>
+
+
+          <div class="two-col">
+
+
+            <!-- NODE HISTORY -->
+            <article class="panel trend-panel">
+
+              <div class="panel-title-row">
+
+                <div>
+
+                  <span class="kicker">
+                    NODE HISTORY
+                  </span>
+
+                  <h2 id="selectedNodeSub">
+                    N03 telemetry
+                  </h2>
+
+                </div>
+
+
+                <select id="nodeMetric">
+
+                  <option value="tilt">
+                    Tilt
+                  </option>
+
+                  <option value="vibration">
+                    Vibration
+                  </option>
+
+                  <option value="displacement">
+                    Displacement
+                  </option>
+
+                  <option value="crack">
+                    Crack Growth
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="chart-wrap threshold-chart">
+                <canvas id="nodeChart"></canvas>
+                <div class="chart-alert-line node-threshold" data-threshold-for="nodeMetric">
+                  <span>TILT ALERT LIMIT</span>
+                </div>
+              </div>
+              <div class="chart-threshold-note">
+                <i></i>
+                Red guide = configured prototype warning boundary.
+              </div>
+
+            </article>
+
+
+            <!-- NODE DETAILS -->
+            <article class="panel node-detail-panel">
+
+              <div class="panel-title-row">
+
+                <div>
+
+                  <span class="kicker">
+                    NODE DIAGNOSTICS
+                  </span>
+
+                  <h2>
+                    Selected Node
+                  </h2>
+
+                </div>
+
+
+                <span
+                  id="nodeStateChip"
+                  class="status-badge normal">
+
+                  NORMAL
+
+                </span>
+
+              </div>
+
+
+              <div
+                id="nodeDetails"
+                class="detail-matrix">
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             AI INTELLIGENCE
+        =================================================== -->
+        <section id="view-ai" class="view">
+
+
+          <div class="section-heading">
+
+            <div>
+
+              <span class="kicker">
+                HYBRID INTELLIGENCE
+              </span>
+
+              <h2>
+                AI Risk Engine
+              </h2>
+
+              <p>
+                Interpretable anomaly detection, trend analysis
+                and spatial sensor fusion.
+              </p>
+
+            </div>
+
+
+            <button
+              id="trainBtn"
+              class="primary-action">
+
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v12m0 0-4-4m4 4 4-4M5 20h14"/>
+              </svg>
+
+              Retrain Model
+
+            </button>
+
+          </div>
+
+
+          <!-- AI METRICS -->
+          <div class="ai-metrics">
+
+            <article class="panel ai-stat">
+
+              <small>MODEL</small>
+
+              <strong>
+                Isolation Forest
+              </strong>
+
+              <span>
+                Unsupervised anomaly detection
+              </span>
+
+            </article>
+
+
+            <article class="panel ai-stat">
+
+              <small>STATUS</small>
+
+              <strong id="modelStatus">
+                CHECKING
+              </strong>
+
+              <span>
+                Live inference engine
+              </span>
+
+            </article>
+
+
+            <article class="panel ai-stat">
+
+              <small>TRAINING SAMPLES</small>
+
+              <strong id="trainingSamples">
+                0
+              </strong>
+
+              <span>
+                Recent validated records
+              </span>
+
+            </article>
+
+
+            <article class="panel ai-stat">
+
+              <small>
+                FEATURE VECTOR
+              </small>
+
+              <strong>
+                4
+              </strong>
+
+              <span>
+                Tilt · vibration · displacement · crack
+              </span>
+
+            </article>
+
+          </div>
+
+
+          <div class="two-col ai-layout">
+
+
+            <!-- RISK ARCHITECTURE -->
+            <article class="panel architecture-panel">
+
+              <div class="panel-title-row">
+
+                <div>
+
+                  <span class="kicker">
+                    DECISION ARCHITECTURE
+                  </span>
+
+                  <h2>
+                    Risk Score Composition
+                  </h2>
+
+                </div>
+
+              </div>
+
+
+              <div class="weight-list">
+
+
+                <div>
+
+                  <span>
+                    <i class="w1"></i>
+                    <b>Sensor Severity</b>
+                    <small>Normalized physical deviation</small>
+                  </span>
+
+                  <strong>
+                    40%
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    <i class="w2"></i>
+                    <b>Temporal Trend</b>
+                    <small>Recent rate of change</small>
+                  </span>
+
+                  <strong>
+                    25%
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    <i class="w3"></i>
+                    <b>ML Anomaly</b>
+                    <small>Isolation Forest outlier score</small>
+                  </span>
+
+                  <strong>
+                    20%
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    <i class="w4"></i>
+                    <b>Spatial Correlation</b>
+                    <small>Nearby node agreement</small>
+                  </span>
+
+                  <strong>
+                    15%
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div class="formula-card">
+
+                <span>
+                  MINE RISK SCORE
+                </span>
+
+                <b>
+                  0.40S + 0.25T + 0.20A + 0.15C
+                </b>
+
+                <p>
+                  Prototype weights are intentionally interpretable
+                  and designed for later mine-specific calibration.
+                </p>
+
+              </div>
+
+            </article>
+
+
+            <!-- EXPLAINABLE AI -->
+            <article class="panel ai-explain-panel">
+
+
+              <img
+                class="ai-panel-art"
+                src="/assets/ai-fusion.svg"
+                alt="Three-node AI sensor fusion diagram"
+              />
+
+
+              <div class="panel-title-row">
+
+                <div>
+
+                  <span class="kicker">
+                    EXPLAINABLE AI
+                  </span>
+
+                  <h2>
+                    Current Model Explanation
+                  </h2>
+
+                </div>
+
+
+                <span class="ai-chip">
+                  <i></i>
+                  LIVE
+                </span>
+
+              </div>
+
+
+              <div
+                id="aiDetail"
+                class="explain-body">
+
+                <div class="empty-orb"></div>
+
+                <h3>
+                  No active analysis
+                </h3>
+
+                <p>
+                  Live sensor readings will appear here
+                  with the dominant risk factors.
+                </p>
+
+              </div>
+
+
+              <div
+                id="trainMsg"
+                class="train-message">
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <!-- PIPELINE -->
+          <article class="panel model-pipeline-panel">
+
+            <div class="panel-title-row">
+
+              <div>
+
+                <span class="kicker">
+                  MODEL PIPELINE
+                </span>
+
+                <h2>
+                  From Raw Signal to Early Warning
+                </h2>
+
+              </div>
+
+            </div>
+
+
+            <div class="model-pipeline">
+
+              <div>
+                <span>01</span>
+                <b>Sensor Input</b>
+                <small>ESP32 telemetry</small>
+              </div>
+
+              <i>→</i>
+
+
+              <div>
+                <span>02</span>
+                <b>Filtering</b>
+                <small>Noise reduction</small>
+              </div>
+
+              <i>→</i>
+
+
+              <div>
+                <span>03</span>
+                <b>Features</b>
+                <small>4D vector</small>
+              </div>
+
+              <i>→</i>
+
+
+              <div>
+                <span>04</span>
+                <b>Anomaly</b>
+                <small>Isolation Forest</small>
+              </div>
+
+              <i>→</i>
+
+
+              <div>
+                <span>05</span>
+                <b>Fusion</b>
+                <small>Trend + spatial</small>
+              </div>
+
+              <i>→</i>
+
+
+              <div>
+                <span>06</span>
+                <b>Early Warning</b>
+                <small>Risk + alert</small>
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             DATASET
+        =================================================== -->
+        <section id="view-dataset" class="view">
+
+
+          <div class="section-heading">
+
+            <div>
+
+              <span class="kicker">
+                DATA PIPELINE
+              </span>
+
+              <h2>
+                Dataset Lab
+              </h2>
+
+              <p>
+                Live prototype records, risk labels
+                and training-ready telemetry.
+              </p>
+
+            </div>
+
+
+            <div class="dataset-actions">
+
+              <input
+                id="csvInput"
+                type="file"
+                accept=".csv,text/csv"
+                hidden
+              />
+
+
+              <button
+                id="csvImportBtn"
+                class="soft-action">
+
+                Import CSV
+
+              </button>
+
+
+              <button
+                id="datasetRefresh"
+                class="soft-action">
+
+                Refresh
+
+              </button>
+
+
+              <a
+                href="/api/dataset/export.csv"
+                class="primary-action">
+
+                Export CSV
+
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- DATASET METRICS -->
+          <div class="dataset-metrics">
+
+
+            <article class="panel ds-stat">
+
+              <small>
+                TOTAL SAMPLES
+              </small>
+
+              <strong id="dsTotal">
+                0
+              </strong>
+
+              <span>
+                Live + prototype
+              </span>
+
+            </article>
+
+
+            <article class="panel ds-stat">
+
+              <small>
+                NORMAL
+              </small>
+
+              <strong id="dsNormal">
+                0
+              </strong>
+
+              <span class="green-text">
+                Expected patterns
+              </span>
+
+            </article>
+
+
+            <article class="panel ds-stat">
+
+              <small>
+                WARNING
+              </small>
+
+              <strong id="dsWarning">
+                0
+              </strong>
+
+              <span class="amber-text">
+                Elevated patterns
+              </span>
+
+            </article>
+
+
+            <article class="panel ds-stat">
+
+              <small>
+                CRITICAL
+              </small>
+
+              <strong id="dsCritical">
+                0
+              </strong>
+
+              <span class="red-text">
+                High-risk patterns
+              </span>
+
+            </article>
+
+          </div>
+
+
+          <!-- DATASET TABLE -->
+          <article class="panel data-table-panel">
+
+
+            <div class="panel-title-row">
+
+              <div>
+
+                <span class="kicker">
+                  RECENT RECORDS
+                </span>
+
+                <h2>
+                  Telemetry Dataset
+                </h2>
+
+              </div>
+
+
+              <span
+                id="tableStatus"
+                class="tiny-status">
+
+                <i></i>
+                LIVE DATA
+
+              </span>
+
+            </div>
+
+
+            <div class="table-scroll">
+
+              <table>
+
+                <thead>
+
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Node</th>
+                    <th>Tilt °</th>
+                    <th>Vibration</th>
+                    <th>Disp. mm</th>
+                    <th>Crack mm</th>
+                    <th>Anomaly</th>
+                    <th>Risk</th>
+                    <th>Status</th>
+                  </tr>
+
+                </thead>
+
+
+                <tbody id="datasetRows">
+
+                  <tr>
+
+                    <td
+                      colspan="9"
+                      class="table-empty">
+
+                      Loading records…
+
+                    </td>
+
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </article>
+
+
+          <!-- DATA NOTE -->
+          <article class="panel dataset-note-panel">
+
+            <div>
+
+              <span class="note-icon">
+                i
+              </span>
+
+
+              <div>
+
+                <b>
+                  Prototype data strategy
+                </b>
+
+                <p>
+                  Controlled sensor data starts the model.
+                  Every live ESP32 reading is persisted,
+                  scored and added to the continuously growing
+                  dataset for later field retraining.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             ALERT CENTER
+        =================================================== -->
+        <section id="view-alerts" class="view">
+
+
+          <div class="section-heading">
+
+            <div>
+
+              <span class="kicker">
+                EARLY WARNING
+              </span>
+
+              <h2>
+                Alert Center
+              </h2>
+
+              <p>
+                Risk transitions, recommended actions
+                and Telegram delivery status.
+              </p>
+
+            </div>
+
+
+            <div
+              id="telegramStatus"
+              class="telegram-pill">
+
+              <span>●</span>
+
+              TELEGRAM CHECKING
+
+            </div>
+
+          </div>
+
+
+          <!-- ALERT STATS -->
+          <div class="alert-overview">
+
+
+            <article class="panel alert-stat">
+
+              <small>
+                ACTIVE WARNINGS
+              </small>
+
+              <strong id="warningCount">
+                0
+              </strong>
+
+              <span>
+                Elevated zones
+              </span>
+
+            </article>
+
+
+            <article class="panel alert-stat critical">
+
+              <small>
+                CRITICAL EVENTS
+              </small>
+
+              <strong id="criticalCount">
+                0
+              </strong>
+
+              <span>
+                Immediate attention
+              </span>
+
+            </article>
+
+
+            <article class="panel alert-stat">
+
+              <small>
+                CHANNEL
+              </small>
+
+              <strong id="telegramLabel">
+                OPTIONAL
+              </strong>
+
+              <span>
+                Telegram Bot API
+              </span>
+
+            </article>
+
+          </div>
+
+
+          <!-- ALERT TIMELINE -->
+          <article class="panel alert-feed-panel">
+
+
+            <div class="panel-title-row">
+
+              <div>
+
+                <span class="kicker">
+                  EVENT TIMELINE
+                </span>
+
+                <h2>
+                  Recent Alerts
+                </h2>
+
+              </div>
+
+
+              <button
+                id="alertRefresh"
+                class="soft-action">
+
+                Refresh
+
+              </button>
+
+            </div>
+
+
+            <div
+              id="alertList"
+              class="alert-timeline">
+
+              <div class="empty-state">
+                No alerts loaded.
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- SENSOR IMAGE POP-OUT -->
+  <div
+    id="sensorModal"
+    class="sensor-modal"
+    aria-hidden="true">
+
+    <div
+      class="sensor-modal-backdrop"
+      data-sensor-modal-close>
+    </div>
+
+    <section
+      class="sensor-modal-card"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sensorModalTitle">
+
+      <button
+        class="sensor-modal-close"
+        type="button"
+        aria-label="Close sensor preview"
+        data-sensor-modal-close>
+        ×
+      </button>
+
+      <div class="sensor-modal-media">
+        <img
+          src="/assets/sensor-node.png"
+          alt="Wireless field sensor deployment reference"
+        />
+        <span>FIELD DEPLOYMENT REFERENCE</span>
+      </div>
+
+      <div class="sensor-modal-content">
+        <span class="kicker">NEXGEN SENSOR LAYER</span>
+        <h2 id="sensorModalTitle">Sensor Node Deployment Concept</h2>
+        <p>
+          A real-world mounting reference for the three-node monitoring layout.
+          The NexGen prototype focuses on continuous movement sensing, wireless
+          telemetry and early-warning intelligence.
+        </p>
+
+        <div class="sensor-modal-specs">
+          <div>
+            <small>MONITORING</small>
+            <strong>Tilt · Vibration · Displacement</strong>
+          </div>
+          <div>
+            <small>TOPOLOGY</small>
+            <strong>N01 · N02 · N03</strong>
+          </div>
+          <div>
+            <small>PIPELINE</small>
+            <strong>Sensor → Edge → AI → Alert</strong>
+          </div>
+        </div>
+
+        <div class="sensor-modal-note">
+          Reference image for deployment visualization; prototype hardware may differ.
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+
+  <!-- TOAST -->
+  <div id="toast" class="toast">
+    <span></span>
+    <p></p>
+  </div>
+
+
+  <!-- CONNECTION -->
+  <div
+    id="connectionBanner"
+    class="connection-banner">
+
+    Reconnecting to live telemetry…
+
+  </div>
+
+
+  <script src="/assets/app.js"></script>
+
+  <script>
+    (() => {
+      const modal = document.getElementById("sensorModal");
+      const openBtn = document.getElementById("sensorPreviewBtn");
+      const closeEls = document.querySelectorAll("[data-sensor-modal-close]");
+
+      const setModal = (open) => {
+        if (!modal) return;
+        modal.classList.toggle("show", open);
+        modal.setAttribute("aria-hidden", String(!open));
+        document.body.classList.toggle("modal-open", open);
+      };
+
+      openBtn?.addEventListener("click", () => setModal(true));
+      closeEls.forEach((el) => el.addEventListener("click", () => setModal(false)));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal?.classList.contains("show")) {
+          setModal(false);
+        }
+      });
+
+      const thresholdLabels = {
+        displacement: "DISPLACEMENT ALERT LIMIT",
+        tilt: "TILT ALERT LIMIT",
+        vibration: "VIBRATION ALERT LIMIT",
+        crack: "CRACK GROWTH ALERT LIMIT"
+      };
+
+      const syncThresholdLabel = (selectId) => {
+        const select = document.getElementById(selectId);
+        const line = document.querySelector(`[data-threshold-for="${selectId}"]`);
+        const label = line?.querySelector("span");
+        if (!select || !label) return;
+        label.textContent = thresholdLabels[select.value] || "ALERT LIMIT";
+      };
+
+      ["chartMetric", "nodeMetric"].forEach((selectId) => {
+        const select = document.getElementById(selectId);
+        syncThresholdLabel(selectId);
+        select?.addEventListener("change", () => syncThresholdLabel(selectId));
+      });
+    })();
+  </script>
+
+
+</body>
+</html>
