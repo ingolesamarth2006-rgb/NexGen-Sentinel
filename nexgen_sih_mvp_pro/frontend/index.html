@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f4f6f2" />
+  <meta name="theme-color" content="#eef2ef" />
   <title>NEXGEN SENTINEL · Mine Subsidence Intelligence</title>
 </head>
 <body>
@@ -13,19 +13,35 @@
       const standalone = location.protocol === 'file:';
       const base = standalone ? './' : '/assets/';
 
-      const css = document.createElement('link');
-      css.rel = 'stylesheet';
-      css.href = base + 'light-theme.css';
-      document.head.appendChild(css);
+      function addCss(name) {
+        const css = document.createElement('link');
+        css.rel = 'stylesheet';
+        css.href = base + name;
+        document.head.appendChild(css);
+      }
 
-      const app = document.createElement('script');
-      app.src = base + 'light-app.js';
-      app.onload = () => document.getElementById('boot')?.remove();
-      app.onerror = () => {
+      function addScript(name, onload, onerror) {
+        const s = document.createElement('script');
+        s.src = base + name;
+        if (onload) s.onload = onload;
+        if (onerror) s.onerror = onerror;
+        document.body.appendChild(s);
+      }
+
+      addCss('light-theme.css');
+      addCss('pro-v2.css');
+
+      addScript('light-app.js', () => {
+        addScript('functional-v2.js', () => {
+          document.getElementById('boot')?.remove();
+        }, () => {
+          const boot = document.getElementById('boot');
+          if (boot) boot.innerHTML = '<b>NEXGEN interaction layer failed to load.</b><br><br>Run git pull and reopen this file.';
+        });
+      }, () => {
         const boot = document.getElementById('boot');
         if (boot) boot.innerHTML = '<b>NEXGEN failed to load the UI assets.</b><br><br>Run git pull, then reopen this file. If using the backend, open the FastAPI URL instead.';
-      };
-      document.body.appendChild(app);
+      });
     })();
   </script>
 </body>
