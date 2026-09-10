@@ -5,9 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f4f6f2" />
   <title>NEXGEN SENTINEL · Mine Subsidence Intelligence</title>
-  <link rel="stylesheet" href="/assets/light-theme.css" />
 </head>
 <body>
-  <script src="/assets/light-app.js"></script>
+  <div id="boot" style="font-family:Inter,Segoe UI,system-ui,sans-serif;padding:32px;color:#173137">Loading NEXGEN Sentinel…</div>
+  <script>
+    (function () {
+      const standalone = location.protocol === 'file:';
+      const base = standalone ? './' : '/assets/';
+
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = base + 'light-theme.css';
+      document.head.appendChild(css);
+
+      const app = document.createElement('script');
+      app.src = base + 'light-app.js';
+      app.onload = () => document.getElementById('boot')?.remove();
+      app.onerror = () => {
+        const boot = document.getElementById('boot');
+        if (boot) boot.innerHTML = '<b>NEXGEN failed to load the UI assets.</b><br><br>Run git pull, then reopen this file. If using the backend, open the FastAPI URL instead.';
+      };
+      document.body.appendChild(app);
+    })();
+  </script>
 </body>
 </html>
