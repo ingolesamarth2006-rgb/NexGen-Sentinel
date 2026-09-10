@@ -30,10 +30,16 @@
 
       addCss('light-theme.css');
       addCss('pro-v2.css');
+      addCss('analytics-v3.css');
 
       addScript('light-app.js', () => {
         addScript('functional-v2.js', () => {
-          document.getElementById('boot')?.remove();
+          addScript('analytics-v3.js', () => {
+            document.getElementById('boot')?.remove();
+          }, () => {
+            const boot = document.getElementById('boot');
+            if (boot) boot.innerHTML = '<b>NEXGEN analytics layer failed to load.</b><br><br>Run git pull and reopen this file.';
+          });
         }, () => {
           const boot = document.getElementById('boot');
           if (boot) boot.innerHTML = '<b>NEXGEN interaction layer failed to load.</b><br><br>Run git pull and reopen this file.';
