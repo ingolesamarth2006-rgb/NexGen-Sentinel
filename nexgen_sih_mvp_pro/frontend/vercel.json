@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/assets/:path*",
+      "destination": "/:path*"
+    }
+  ]
+}
